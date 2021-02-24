@@ -1,0 +1,4 @@
+spring:
+  cloud:
+    zookepper:
+      connect-string: 10.74.14.116:2181

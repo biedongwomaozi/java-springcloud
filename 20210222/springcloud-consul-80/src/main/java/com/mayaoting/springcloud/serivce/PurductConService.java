@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Component
-@FeignClient(value = "purduct8001")
+@FeignClient(value = "purduct")
 public interface PurductConService {
     @PostMapping(value = "purductController/add")
     Boolean add(Purduct purduct);
