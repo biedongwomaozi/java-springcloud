@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 spring:
   application:
     name: purduct
@@ -10,7 +10,7 @@ spring:
     username: root
     password: 123456
   profiles:
-    active: consul
+    active: zookeeper
 mybatis:
   config-location: classpath:mybatis/mybatis-cfg.xml
   mapper-locations: classpath:mapper/*Mapper.xml

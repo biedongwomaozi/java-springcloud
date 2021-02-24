@@ -9,12 +9,6 @@ spring:
     url: jdbc:mysql://localhost:3306/springcloud_db01?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: 123456
-  cloud:
-    consul:
-      port: 8500
-      host: localhost
-      discovery:
-        service-name: ${spring.application.name}
   profiles:
     active: consul
 mybatis:
