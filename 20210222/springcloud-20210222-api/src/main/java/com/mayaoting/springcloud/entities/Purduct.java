@@ -2,7 +2,7 @@ package com.mayaoting.springcloud.entities;
 
 import java.io.Serializable;
 
-public class Purduct implements Serializable {
+public class Purduct extends BaseResultObject implements Serializable {
     private String pid;
     private String productName;
     private String dbSource;
@@ -29,5 +29,12 @@ public class Purduct implements Serializable {
 
     public void setDbSource(String dbSource) {
         this.dbSource = dbSource;
+    }
+
+    public Purduct(){
+
+    }
+    public Purduct(Boolean status){
+        this.resultStatus = status;
     }
 }

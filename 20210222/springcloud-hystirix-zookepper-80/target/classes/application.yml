@@ -1,0 +1,36 @@
+server:
+  port: 80
+spring:
+  application:
+    name: order80
+  cloud:
+    zookeeper:
+      connect-string: 10.74.14.116:2181
+# 开启feigin集成的hystirix 作用为服务降级、熔断
+feign:
+  hystrix:
+    enabled: true
+#设置feign客户端超时时间（OpenFeign默认支持ribbon）
+ribbon:
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ReadTimeout: 3000
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的实际
+  ConnectTimeout: 3000
+#ribbon 和 hystrix 都有默认超时时间（默认一秒钟），以时间最短的为主
+hystrix:
+  command:
+   default:
+     circuitBreaker:
+       enabled: true
+       requestVolumeThreshold: 10 #触发熔断的最小请求次数，默认为20
+       sleepWindowInMilliseconds: 10000 #休眠时长，默认为5秒
+       errorThresholdPercentage: 30 #触发熔断的失败请求最小占比，默认50%
+     execution:
+       timeout:
+         enable: true #为false则超时控制有ribbon控制，为true则hystrix超时和ribbon超时都是用，但是谁小谁生效，默认为true
+       isolation:
+         thread:
+           timeoutInMilliseconds: 3000
+
+
+
