@@ -17,6 +17,7 @@
         <module>springcloud-zookeeper-8001</module>
         <module>springcloud-zookeeper-8002</module>
         <module>springcloud-gateway-9525</module>
+        <module>springcloud-hystirix-zookepper-80-01</module>
     </modules>
 
     <packaging>pom</packaging>

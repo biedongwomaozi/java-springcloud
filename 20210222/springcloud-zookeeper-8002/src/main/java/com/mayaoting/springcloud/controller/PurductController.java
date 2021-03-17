@@ -45,9 +45,8 @@ public class PurductController {
         return "";
     }
 
-    @GetMapping("purductController/rumTime")
-    public String rumTime() {
-        int time = 3;
+    @PostMapping("purductController/runTime")
+    public String rumTime(@RequestParam(value = "time") int time) {
         try {
             TimeUnit.SECONDS.sleep(time);
         }catch (Exception e){
