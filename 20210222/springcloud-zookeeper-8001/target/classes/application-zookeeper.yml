@@ -1,4 +1,0 @@
-spring:
-  cloud:
-    zookepper:
-      connect-string: localhost:2181
